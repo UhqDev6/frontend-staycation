@@ -1,20 +1,56 @@
+import { useState } from 'react';
+import { AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 export const Navbar = () => {
+    const [nav, setNav] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleNav = () => {
+        setNav(!nav);
+        setIsLoading(true)
+
+    }
     return(
-        <div className="hidden w-full md:block md:w-auto">
-            <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-light md:border-0 md:bg-white">
+        <>
+            <ul className="hidden md:flex">
                 <li>
-                    <p  className="block py-2 pr-4 pl-3 text-gray-500">Home</p>
+                    <p  className="p-4 text-gray-500">Home</p>
                 </li>
                 <li>
-                    <p  className="block py-2 pr-4 pl-3 text-gray-500">Browse by</p>
+                    <p  className="p-4 text-gray-500">Browse by</p>
                 </li>
                 <li>
-                    <p  className="block py-2 pr-4 pl-3 text-gray-500">Stories</p>
+                    <p  className="p-4 text-gray-500">Stories</p>
                 </li>
                 <li>
-                    <p  className="block py-2 pr-4 pl-3 text-gray-500">Agents</p>
+                    <p  className="p-4 text-gray-500">Agents</p>
                 </li>
             </ul>
-        </div>
+            <div onClick={handleNav} className='block md:hidden'>
+            {isLoading &&
+                
+                    !nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/>
+                
+            }
+            </div>
+            {isLoading &&
+            <div className={!nav ? 'fixed left-0 top-0 z-30 w-[60%] h-full bg-cyan-400 ease-in-out duration-500' : 'fixed left-[-100%]'}>
+                <ul className='uppercase p-4'>
+                    <li>
+                        <p  className="p-4 text-white border-b  border-r-white">Home</p>
+                    </li>
+                    <li>
+                        <p  className="p-4 text-white border-b border-r-white">Browse by</p>
+                    </li>
+                    <li>
+                        <p  className="p-4 text-white border-b border-r-white">Stories</p>
+                    </li>
+                    <li>
+                        <p  className="p-4 text-white">Agents</p>
+                    </li>
+                </ul>
+            </div>
+            }
+        </>
+        
     );
 }
