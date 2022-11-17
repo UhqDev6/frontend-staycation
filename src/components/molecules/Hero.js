@@ -49,7 +49,7 @@ export const Hero = () => {
                                     lg:text-4xl 
                                     xl:text-5xl
                                     xl:tracking-wider 
-                                    xl:leading-relaxed ">Passion For Work, and Owning your Future Residence
+                                    xl:leading-relaxed ">Passion For Work, Owning your Future Residence
                                     <Typed
                                         className="underline text-cyan-500"
                                         strings={[' Hotels', ' House', ' Villa']}
