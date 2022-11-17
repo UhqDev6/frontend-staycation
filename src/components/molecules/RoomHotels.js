@@ -72,14 +72,14 @@ const RoomHotels = () => {
     const roomHotels = [
         {
             id: 1,
-            isPopuler: true,
+            isPopuler: false,
             image: IMGLivingRoom5,
             title: 'Anggana',
             ket: 'Bogor, Indonesia',
         },
         {
             id: 2,
-            isPopuler: false,
+            isPopuler: true,
             image: IMGLivingRoom6,
             title: 'Tabby Town',
             ket: 'Gunung Batu, Indonesia',
@@ -124,7 +124,7 @@ const RoomHotels = () => {
         <>
             <section className="title-picked w-full flex top-0 left-0 mt-20">
                 <div className="w-full m-auto justify-between flex items-center ml-20 ">
-                    <Title className="text-2xl">House with beauty backyard</Title>
+                    <Title className="text-2xl">Hotels with beauty backyard</Title>
                 </div>
             </section>
             <section>
@@ -136,23 +136,24 @@ const RoomHotels = () => {
                                         <Card key={data.id} className="w-[263px] h-[250px] shadow-none">
                                             <img src={data.image} alt='MostPicked2' className="absolute cursor-pointer"/>
                                             { data.isPopuler === true ?
-                                            <Card.Title className="left-24 z-20">
-                                                <div className="w-[180px] h-[40px] bg-cyan-500 rounded-b-xl flex">
-                                                    <p className="m-auto text-white"><span className="font-semibold">Populer</span><span className="font-light"> Choice</span></p>
+                                            <Card.Title className="z-20  relative">
+                                                <div className="w-[120px] h-[40px] 
+                                                bg-cyan-500 rounded-bl-xl flex absolute top-0 right-0">
+                                                    <p className="m-auto left-0 top-0  text-white text-xs"><span className="font-semibold">Populer</span><span className="font-light"> Choice</span></p>
                                                 </div>
                                             </Card.Title>
                                             :
-                                            <Card.Title className="left-24 z-20 opacity-0">
-                                                <div className="w-[180px] h-[40px] bg-cyan-500 rounded-b-xl flex">
+                                            <Card.Title className="left-24 z-20 opacity-0 relative">
+                                                <div className="w-[180px] h-[40px] bg-cyan-500 rounded-b-xl flex absolute">
                                                 </div>
                                             </Card.Title>
                                             }
-                                            <Card.Body>
+                                            <Card.Body className="top-10">
                                                 <div className="mt-[58%] left-0">
                                                     <p className="text-black">{data.title}</p>
                                                 </div>
                                             </Card.Body>
-                                            <Card.Footer>
+                                            <Card.Footer className="top-10">
                                                 <div className="left-0">
                                                     <p className="text-slate-500 text-xs font-light">{data.ket}</p>
                                                 </div>
