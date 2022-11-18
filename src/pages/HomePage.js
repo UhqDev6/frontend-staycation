@@ -4,6 +4,7 @@ import MostPicked from "../components/molecules/MostPicked";
 import RoomApartements from "../components/molecules/RoomApartements";
 import RoomHotels from "../components/molecules/RoomHotels";
 import RoomHouse from "../components/molecules/RoomHouse";
+import Testimonial from "../components/molecules/Testimonial";
 
 const HomePage = () => {
     return(
@@ -25,6 +26,9 @@ const HomePage = () => {
             </div>
             <div>
                 <RoomApartements/>
+            </div>
+            <div>
+                <Testimonial/>
             </div>
         </div>
     );
